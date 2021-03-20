@@ -1,9 +1,4 @@
-package main 
-
-import (
-	"fmt"
-	"time"
-)
+package main
 
 func main() {
 	fuzzer := NewFuzzer("https://google.com/$MTR")
