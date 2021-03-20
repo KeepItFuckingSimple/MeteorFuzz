@@ -26,7 +26,7 @@ func (w *Worker) Run() []string{ //SAMPLE WORKER CODE SIMULATING 5 SECONDS ACTIO
 func (wp *WorkerPool) Run() []string{
 	fmt.Println("Workers :", wp.workers)
 	var runned = 0
-    var c = make(chan bool) //Creating channel c
+	var c = make(chan bool) //Creating channel c
 	go func() {
 		for _, worker := range wp.workers {
 
