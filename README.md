@@ -14,5 +14,5 @@ To run , just do
 
 To build all , just do 
 
-    go build -o mtrfuzz *.go && ./mtrfuzz 
+    go build -o mtrfuzz *.go 
 
