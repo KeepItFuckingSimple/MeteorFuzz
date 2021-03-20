@@ -32,7 +32,7 @@ func (fz *Fuzzer) Run() {
 	networker.AddSimpleRequest("GET","https://google.com/4")
 	networker.AddSimpleRequest("GET","https://google.com/5")
 	networker.AddSimpleRequest("GET","https://google.com/6")
-	pool := networker.GetPool(2) // 2 is max concurrent workers, so all requests will be splitted to , in this case, 2 workers
+	pool := networker.GetPool(fz.MAX_THREADS) // 2 is max concurrent workers, so all requests will be splitted to , in this case, 2 workers
 	//Pool is a " worker-executer", the pool will exexute workers asynchronously
 	var results = pool.Run()
 	//Then, pool collect all workers results and put them in results var
@@ -43,7 +43,7 @@ func (fz *Fuzzer) Run() {
 
 func NewFuzzer(target string) Fuzzer {
 	return Fuzzer {
-		MAX_THREADS: 5,
+		MAX_THREADS: 2,
 		wordlist: []string{},
 		target: target,
 	}
